@@ -1,0 +1,27 @@
+DEPTH = 128;
+WIDTH = 16;
+ADDRESS_RADIX = HEX;
+DATA_RADIX = HEX;
+CONTENT
+BEGIN
+00	:	3800;	-- mvi	r6,	5
+01	:	0005;
+02	:	2800;	-- mvi	r2,	1
+03	:	0001;
+04	:	3000;	-- mvi	r4,	0xA
+05	:	000A;
+-- Label "FOREVER":
+06	:	2400;	-- mvi	r1,	5
+07	:	0005;
+-- Label "FOR":
+08	:	3400;	-- mvi	r5,	FOR
+09	:	0008;
+0A	:	2C00;	-- mvi	r3,	HEX5
+0B	:	2002;
+0C	:	4C80;	-- add	r3,	r1
+0D	:	6500;	-- sub	r1,	r2
+0E	:	DE80;	-- mvnz	r7,	r5
+0F	:	4500;	-- add	r1,	r2
+10	:	DE80;	-- mvnz	r7,	r5
+[11..7F]	:	0000;
+END;

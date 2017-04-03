@@ -1,0 +1,15 @@
+#define HEX5 0x2002 
+mvi r6,5
+mvi r2,1
+mvi r4,0xA
+FOREVER:
+mvi r1,5
+FOR:
+mvi r5,FOR
+mvi r3,HEX5
+add r3,r1
+sub r1,r2
+mvnz r7,r5
+add r1,r2
+mvnz r7, r5
+
